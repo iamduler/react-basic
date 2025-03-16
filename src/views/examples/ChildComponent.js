@@ -18,8 +18,9 @@ class ChildComponent extends React.Component {
 
         return (
             <>
-                {!showJobs && <div><button onClick={() => this.handleShowHide()}>Show</button></div>}
-                {showJobs && 
+                {showJobs === false ? 
+                    <div><button onClick={() => this.handleShowHide()}>Show</button></div>
+                : 
                     <>
                         <div><button onClick={() => this.handleShowHide()}>Hide</button></div>
                         <div className='job-list'>
