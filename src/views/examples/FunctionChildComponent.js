@@ -1,15 +1,12 @@
 import React from 'react';
 
-class ChildComponent extends React.Component {
-
-    render() {
-        let { name, age } = this.props;
+const FunctionChildComponent = (props) => {
+    let { name, age } = props;
         return (
             <>
                 <div>Child Component {name} {age}</div>
             </>
         )
-    }
 }
 
-export default ChildComponent;
+export default FunctionChildComponent;
