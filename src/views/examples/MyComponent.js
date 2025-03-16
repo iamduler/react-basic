@@ -3,32 +3,38 @@ import React from 'react';
 class MyComponent extends React.Component {
 
     state = {
-        name: 'Duler',
-        age: 25
+        firstName: '',
+        lastName: ''
     }
 
-    handleClickBtn = () => {
-        alert('clicked');
-    }
-
-    handleChangeValue = (event) => {
+    handleChangeFirstName = (event) => {
         this.setState({
-            name: event.target.value,
+            firstName: event.target.value,
         })
+    }
+    
+    handleChangeLastName = (event) => {
+        this.setState({
+            lastName: event.target.value,
+        })
+    }
+    
+    handleSubmit = (event) => {
+        event.preventDefault();
+        alert('Submit');
     }
 
     render() {
         return (
             <>
-                <div>Hello my very first Component</div>
-                <div>My name is {this.state.name}</div>
-                <div>
-                    <input type='text' onChange={(event) => this.handleChangeValue(event)}></input>
-
-                </div>
-                <div className='button'>
-                    <button onClick={(e) => this.handleClickBtn() }>Click me</button>
-                </div>
+                <div>Hello HTML Form</div>
+                <form action="/action_page.php">
+                    <label htmlFor="fname">First name:</label><br></br>
+                    <input type="text" value={this.state.firstName} onChange={(event) => this.handleChangeFirstName(event)}></input><br></br>
+                    <label htmlFor="lname">Last name:</label><br></br>
+                    <input type="text" value={this.state.lastName} onChange={(event) => this.handleChangeLastName(event)}></input><br></br><br></br>
+                    <input type="submit" value="Submit" onClick={(event) => this.handleSubmit(event)}></input>
+                </form> 
             </>
         )
     }
