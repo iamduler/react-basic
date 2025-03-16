@@ -4,7 +4,12 @@ class MyComponent extends React.Component {
 
     state = {
         firstName: '',
-        lastName: ''
+        lastName: '',
+        jobs: [
+            { id: 'job1', title: 'Developers', salary: '500' },
+            { id: 'job2', title: 'BA', salary: '400' },
+            { id: 'job3', title: 'Testers', salary: '300' },
+        ]
     }
 
     handleChangeFirstName = (event) => {
@@ -27,18 +32,16 @@ class MyComponent extends React.Component {
     render() {
         return (
             <>
-                <div>Hello HTML Form</div>
+                {/* <div>Hello HTML Form</div>
                 <form action="/action_page.php">
                     <label htmlFor="fname">First name:</label><br></br>
                     <input type="text" value={this.state.firstName} onChange={(event) => this.handleChangeFirstName(event)}></input><br></br>
                     <label htmlFor="lname">Last name:</label><br></br>
                     <input type="text" value={this.state.lastName} onChange={(event) => this.handleChangeLastName(event)}></input><br></br><br></br>
                     <input type="submit" value="Submit" onClick={(event) => this.handleSubmit(event)}></input>
-                </form> 
+                </form>  */}
 
-                <ChildComponent name={'Lam 1'} age={10}></ChildComponent>
-                <ChildComponent name={'Lam 2'} age={15}></ChildComponent>
-                <ChildComponent name={'Lam 3'} age={20}></ChildComponent>
+                <ChildComponent jobs={this.state.jobs} ></ChildComponent>
             </>
         )
     }
