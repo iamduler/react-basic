@@ -42,9 +42,9 @@ class AddComponent extends React.Component {
 	render() {
 		return (
 			<form action="/action_page.php">
-				<label htmlFor="fname">First name:</label><br></br>
+				<label htmlFor="fname">Job title:</label><br></br>
 				<input type="text" value={this.state.title} onChange={(event) => this.handleChangeJobTitle(event)}></input><br></br>
-				<label htmlFor="lname">Last name:</label><br></br>
+				<label htmlFor="lname">Salary:</label><br></br>
 				<input type="text" value={this.state.salary} onChange={(event) => this.handleChangeSalary(event)}></input><br></br><br></br>
 				<input type="submit" value="Submit" onClick={(event) => this.handleSubmit(event)}></input>
 			</form>
